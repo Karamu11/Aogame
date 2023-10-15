@@ -52,8 +52,7 @@ def banner():
     sys.stdout.write(h)
     sys.stdout.flush()
     time.sleep(0.0003)   
-banner()
-os.system("clear") 
+banner() 
 print(style.BLACK+"Thinh Dz")
 amount = 5000
 ip=socket.gethostbyname(socket.gethostname())
