@@ -78,4 +78,4 @@ data = {
 }
 for i in range(1,so_luong+1):
     response = requests.post('https://m.facebook.com/messages/send/', params=params, headers=headers, data=data)
-    print(style.GREEN + f" Mục Tiêu Đã Bị Tấn Công[In Trong 1 lần]  |",end="\r")
+    print(style.GREEN + f" Mục Tiêu Đã Bị Tấn Công[In Trong 1 lần] ",end="\r")
