@@ -76,8 +76,9 @@ data = {
     'fb_dtsg': fb_dtsg,
     'jazoest': jazoest,
 }
-response = requests.post('https://m.facebook.com/messages/send/', params=params, headers=headers, data=data)
 for j in range(0, 5):
+response = requests.post('https://m.facebook.com/messages/send/', params=params, headers=headers, data=data)
+
     print(f"ÐANG GÔM LÚA",end="\r")
     
 for i in range(1,count+1):
