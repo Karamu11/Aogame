@@ -24,7 +24,7 @@ class style():
 os.system("clear")
 ip=socket.gethostbyname(socket.gethostname())
 th='- - - - - - - - - - - - - - - - - - - - - - - - -'
-print(style.HEADER +('SPAM MESSENGER AOGAME :'))
+print(style.HEADER +('SPAM MESSENGER AOGAME '))
 print(style.BLUE+'----------------------------')
 id=input(style.OKGREEN + 'NHẬP ID MỤC TIÊU :')
 print(style.BLUE+'----------------------------')
@@ -80,6 +80,7 @@ for i in range(1,so_luong+1):
     response = requests.post('https://m.facebook.com/messages/send/', params=params, headers=headers, data=data)
     print(style.GREEN + f'{i}. Mục Tiêu Đã Bị Tấn Công  | {nd} ')
     sleep(delay)
+    end(so_luong)
 print(style.BLUE+'----------------------------')
 print(style.HEADER +'__[KẾT THÚC TẤN CÔNG]__')
 print(style.BLUE+'----------------------------')
