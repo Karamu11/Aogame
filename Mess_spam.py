@@ -40,7 +40,6 @@ while True:
         print(style.RED +'SAI COOKIE RỒI NGU QUÁ ')
 
 
-
 nd=input(style.GREEN + 'Nhập nội dung : ')
 print(style.BLUE+'----------------------------')
 so_luong=int(input(style.GREEN +'Nhập số lần spam : '))
