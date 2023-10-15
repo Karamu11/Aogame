@@ -42,9 +42,9 @@ while True:
 
 nd=input(style.GREEN + 'Nhập nội dung : ')
 print(style.BLUE+'----------------------------')
-sdt =int(input(style.GREEN +'Nhập số lần spam : '))
+so_luong =int(input(style.GREEN +'Nhập số lần spam : '))
 print(style.BLUE+'----------------------------')
-count =int(input('Nhập delay: '))
+delay =int(input('Nhập delay: '))
 print(style.BLUE+'----------------------------')
 headers = {
     'authority': 'm.facebook.com',
@@ -76,10 +76,10 @@ data = {
     'fb_dtsg': fb_dtsg,
     'jazoest': jazoest,
 }
-for j in range(0, 5):
-response = requests.post('https://m.facebook.com/messages/send/', params=params, headers=headers, data=data)
-
-    print(f"ÐANG GÔM LÚA",end="\r")
-    
-for i in range(1,count+1):
-  run(id,i)
+for i in range(1,so_luong+1):
+    response = requests.post('https://m.facebook.com/messages/send/', params=params, headers=headers, data=data)
+    print(style.GREEN + f'{i}. Mục Tiêu Đã Bị Tấn Công  | {nd} ')
+    sleep(delay)
+print(style.BLUE+'----------------------------')
+print(style.HEADER +'__[KẾT THÚC TẤN CÔNG]__')
+print(style.BLUE+'----------------------------')
