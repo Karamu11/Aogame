@@ -35,7 +35,6 @@ banner()
 os.system("clear") 
 print(style.BLACK+"Thinh Dz")
 amount = 5000
-ip=socket.gethostbyname(socket.gethostname())
 th='- - - - - - - - - - - - - - - - - - - - - - - - -'
 print(style.RED+'Tool By Thinh Dz ')
 print(style.BLUE+'---------------------------------------')
