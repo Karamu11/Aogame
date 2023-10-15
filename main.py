@@ -38,11 +38,7 @@ ban = """
 \033[1;31m║➣ Version  : V3                                                                            
 \033[1;33m║➣ Facebook   : Nguyễn Thịnh                                                                
 \033[1;34m╚═══════════════════════════════════════════════════════════╝
-print(style.BLACK+"Thinh Dz")
-amount = 5000
-ip=socket.gethostbyname(socket.gethostname())
-th='- - - - - - - - - - - - - - - - - - - - - - - - -'
-print(style.RED+'Tool By Thinh Dz ')
+
   \033[1;31m ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 """
@@ -53,7 +49,9 @@ def banner():
     sys.stdout.flush()
     time.sleep(0.0003)   
 banner() 
-
+amount = 5000
+ip=socket.gethostbyname(socket.gethostname())
+th='- - - - - - - - - - - - - - - - - - - - - - - - -'
 print(style.BLUE+'---------------------------------------')
 sdt = input(style.GREEN+"Nh?p Sdt vào d? spam : ")
 print(style.BLUE+'---------------------------------------')
