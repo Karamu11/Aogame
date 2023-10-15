@@ -42,7 +42,7 @@ while True:
 
 nd=input(style.GREEN + 'Nhập nội dung : ')
 print(style.BLUE+'----------------------------')
-so_luong=int(input(style.GREEN +'Nhập số lần spam : '))
+count =int(input(style.GREEN +'Nhập số lần spam : '))
 print(style.BLUE+'----------------------------')
 delay=int(input('Nhập delay: '))
 print(style.BLUE+'----------------------------')
