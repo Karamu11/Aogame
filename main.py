@@ -52,9 +52,9 @@ print(style.BLUE+'---------------------------------------')
 sdt = input(style.GREEN+"Phone number : ")
 print(style.BLUE+'---------------------------------------')
 while not re.search("^(0?)(3[2-9]|5[6|8|9]|7[0|6-9]|8[0-6|8|9]|9[0-4|6-9])[0-9]{7}$",sdt):
-  print(style.GREEN+"Sai d?nh d?ng !!")
-  sdt = input(style.GREEN+"Attack time : ")
-count = int(input(style.GREEN+"Attack time agian : "))
+  print(style.GREEN+"Sai định dạng !!")
+  sdt = input(style.GREEN+"Phone number again : ")
+count = int(input(style.GREEN+"Attack time : "))
 
 
 threading = ThreadPoolExecutor(max_workers=int(100000))  
