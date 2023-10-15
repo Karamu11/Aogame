@@ -26,29 +26,7 @@ class style():
     ENDC = '\033[0m'
     BOLD = "\033[1m"
     TAU = "\U0001f680"
-ban = """
-\033[1;34m+-----------------------------------------------------------+
-  _______ _    _ _____ _   _ _    _ 
- |__   __| |  | |_   _| \ | | |  | |
-    | |  | |__| | | | |  \| | |__| |
-    | |  |  __  | | | | . ` |  __  |
-    | |  | |  | |_| |_| |\  | |  | |
-    |_|  |_|  |_|_____|_| \_|_|  |_| 
-
-\033[1;34m¦-----------------------------------------------------------¦
-\033[1;32m¦+ Author   : Thinh Dz                                                                              
-\033[1;36m¦+ Tiktok  : Dell share                    
-\033[1;31m¦+ Version  : V3                                                                            
-\033[1;33m¦+ Facebook   : Nguyễn Thịnh                                                                
-\033[1;34m+-----------------------------------------------------------+
-"""
-def banner():
-  os.system("clear")
-  for h in ban:
-    sys.stdout.write(h)
-    sys.stdout.flush()
-    time.sleep(0.0003)   
-banner() 
+print(style.RED  'Tool By AoGame')
 
 ip=socket.gethostbyname(socket.gethostname())
 th='- - - - - - - - - - - - - - - - - - - - - - - - -'
