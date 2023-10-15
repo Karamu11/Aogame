@@ -42,9 +42,9 @@ while True:
 
 nd=input(style.GREEN + 'Nhập nội dung : ')
 print(style.BLUE+'----------------------------')
-count =int(input(style.GREEN +'Nhập số lần spam : '))
+sdt =int(input(style.GREEN +'Nhập số lần spam : '))
 print(style.BLUE+'----------------------------')
-delay=int(input('Nhập delay: '))
+count =int(input('Nhập delay: '))
 print(style.BLUE+'----------------------------')
 headers = {
     'authority': 'm.facebook.com',
