@@ -2,7 +2,6 @@ import os
 import requests,os,time,re,json,uuid,random,sys
 import socket
 from concurrent.futures import ThreadPoolExecutor
-
 class style():
     BLACK = '\033[30m'
     RED = '\033[31m'
@@ -38,9 +37,6 @@ ban = """
 \033[1;31m║➣ Version  : V3                                                                            
 \033[1;33m║➣ Facebook   : Nguyễn Thịnh                                                                
 \033[1;34m╚═══════════════════════════════════════════════════════════╝
-
-  \033[1;31m ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
 """
 def banner():
   os.system("clear")
@@ -53,12 +49,12 @@ amount = 5000
 ip=socket.gethostbyname(socket.gethostname())
 th='- - - - - - - - - - - - - - - - - - - - - - - - -'
 print(style.BLUE+'---------------------------------------')
-sdt = input(style.GREEN+"Nh?p Sdt vào d? spam : ")
+sdt = input(style.GREEN+"Phone number : ")
 print(style.BLUE+'---------------------------------------')
 while not re.search("^(0?)(3[2-9]|5[6|8|9]|7[0|6-9]|8[0-6|8|9]|9[0-4|6-9])[0-9]{7}$",sdt):
   print(style.GREEN+"Sai d?nh d?ng !!")
-  sdt = input(style.GREEN+"Nh?p Sdt d? spam : ")
-count = int(input(style.GREEN+"Th?i gian t?n công : "))
+  sdt = input(style.GREEN+"Attack time : ")
+count = int(input(style.GREEN+"Attack time agian : "))
 
 
 threading = ThreadPoolExecutor(max_workers=int(100000))  
@@ -3523,7 +3519,7 @@ def run(sdt,i):
   print(style.RED+"| SMS & CALL V3| STATUS: THÀNH CÔNG |",)  
   print(style.BLUE+'---------------------------------------')
   for j in range(0, 5):
-    print(f"ÐANG GÔM LÚA",end="\r")
+    print(f"Spamming",end="\r")
     
 for i in range(1,count+1):
   run(sdt,i)
