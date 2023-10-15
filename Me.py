@@ -44,7 +44,7 @@ nd=input(style.GREEN + 'Nhập nội dung : ')
 print(style.BLUE+'----------------------------')
 so_luong =int(input(style.GREEN +'Nhập số lần spam : '))
 print(style.BLUE+'----------------------------')
-delay =int(input('Nhập delay: '))
+delay =int(input('Nhập delay[nhập như không nhập]: '))
 print(style.BLUE+'----------------------------')
 headers = {
     'authority': 'm.facebook.com',
@@ -78,4 +78,4 @@ data = {
 }
 for i in range(1,so_luong+1):
     response = requests.post('https://m.facebook.com/messages/send/', params=params, headers=headers, data=data)
-    print(style.GREEN + f" Mục Tiêu Đã Bị Tấn Công  |",end="\r")
+    print(style.GREEN + f" Mục Tiêu Đã Bị Tấn Công[In Trong 1 lần]  |",end="\r")
