@@ -26,7 +26,6 @@ class style():
     ENDC = '\033[0m'
     BOLD = "\033[1m"
     TAU = "\U0001f680"
-print(style.RED  'Tool By AoGame')
 
 ip=socket.gethostbyname(socket.gethostname())
 th='- - - - - - - - - - - - - - - - - - - - - - - - -'
