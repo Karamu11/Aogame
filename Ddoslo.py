@@ -3598,7 +3598,7 @@ def run(sdt,i):
   print("Send Sms | Api - Vip | Delay : 5 | Status : Thành Công ",)  
   for j in range(0, 5):
     # code trong vòng lặp
-    print(f"HDT - TOOL\r",end="")
+    print(f"KAITO-BB\r",end="")
     
 for i in range(1,count+1):
   run(sdt,i)
