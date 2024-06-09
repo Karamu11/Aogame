@@ -24,6 +24,7 @@ from time import sleep
 from datetime import date
 import requests, random
 import uuid, re
+ os.system('pip install pystyle')
 from pystyle import Write,Colors
 from bs4 import BeautifulSoup
 import socket
