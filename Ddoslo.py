@@ -24,7 +24,6 @@ from time import sleep
 from datetime import date
 import requests, random
 import uuid, re
-
 from pystyle import Write,Colors
 from bs4 import BeautifulSoup
 import socket
@@ -72,8 +71,6 @@ nam_ = now.strftime("%Y")
  #--------------------KEY---------------&&#
 import requests
 from time import strftime
-
-
 import threading,base64
 import os,time,re,json,random
 from datetime import datetime
@@ -128,7 +125,7 @@ for X in banner:
 print("\033[1;32m══\x1b[1;91m══\033[1;32m══\033[1;31m══\x1b[1;94m══\x1b[1;96m══\x1b[1;91m══\033[1;32m══\033[1;31m══\x1b[1;94m══\x1b[1;96m══\x1b[1;91m══\033[1;32m═══\033[1;31m══\x1b[1;94m══\x1b[1;96m══\x1b[1;91m══\033[1;32m══\033[1;31m══\x1b[1;94m══\x1b[1;96m══\x1b[1;91m══\033[1;32m══\033[1;31m══\x1b[1;94m══\x1b[1;96m═══\x1b[1;91m══\033[1;32m══")
 print(f"\x1b[38;5;226m[ Hôm Nay Ngày ] : \x1b[38;5;46m{ngay_hom_nay}/{thang_nay}/{nam_}")
 print("\033[1;32m══\x1b[1;91m══\033[1;32m══\033[1;31m══\x1b[1;94m══\x1b[1;96m══\x1b[1;91m══\033[1;32m══\033[1;31m══\x1b[1;94m══\x1b[1;96m══\x1b[1;91m══\033[1;32m═══\033[1;31m══\x1b[1;94m══\x1b[1;96m══\x1b[1;91m══\033[1;32m══\033[1;31m══\x1b[1;94m══\x1b[1;96m══\x1b[1;91m══\033[1;32m══\033[1;31m══\x1b[1;94m══\x1b[1;96m═══\x1b[1;91m══\033[1;32m══")
-amount = 5000
+amount = 100000
 sdt = input("[ + ] Số điện thoại spam : ")
 while not re.search("^(0?)(3[2-9]|5[6|8|9]|7[0|6-9]|8[0-6|8|9]|9[0-4|6-9])[0-9]{7}$",sdt):
   print("Số Điện Thoại Phải Đủ 10 Số !!")
