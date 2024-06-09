@@ -87,10 +87,11 @@ try:
   from random import randint
   import requests,pystyle
 except:
+  os.system('pip install pystyle')
   os.system("pip install faker")
   os.system("pip install requests")
   os.system("pip install colorama")
-  os.system('pip install requests && pip install bs4 && pip install pystyle')
+  os.system('pip install requests && pip install bs4')
   print('__Vui Lòng Chạy Lại Tool__')
 from pystyle import Add, Center, Anime, Colors, Colorate, Write, System
 #MÀU
