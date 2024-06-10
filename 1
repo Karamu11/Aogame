@@ -7,9 +7,37 @@ import requests # đầu tiên import thư viện trước
 import os
 from time import sleep # thêm cái thư viện thời gian
 
+xnhac = "\033[1;36m"
+do = "\033[1;31m"
+luc = "\033[1;32m"
+vang = "\033[1;33m"
+xduong = "\033[1;34m"
+hong = "\033[1;35m"
+trang = "\033[1;37m"
+whiteb="\033[1;37m"
+red="\033[0;31m"
+redb="\033[1;31m"
+end='\033[0m'
+
+def banner():
+    banner = ("""
+\033[1;34m __  ___      ___       __  .___________.  ______   
+|  |/  /     /   \\     |  | |           | /  __  \\  
+|  '  /     /  ^  \\    |  | `---|  |----`|  |  |  | 
+|    <     /  /_\\  \\   |  |     |  |     |  |  |  | 
+|  .  \\   /  _____  \\  |  |     |  |     |  `--'  | 
+|__|\\__\\ /__/     \\__\\ |__|     |__|      \\______/                                                    
+""")
+    print(banner)
+
+
+
+os.system('clear')
+banner()
+
 TDS_token = input("Nhập Access_Token TDS: ") # này là để hiển thị để nhập dữ liệu vào
 
-# print(TDS_token) # này là nó in dữ liệu từ TDS_token nhập vào nhó
+print(TDS_token) # này là nó in dữ liệu từ TDS_token nhập vào nhó
 
 # lấy nhiệm vụ để làm thì ae lên Traodoisub vào phần APi nhé
 
@@ -28,7 +56,7 @@ while True: # vòng lặp nhé
                 print(f"Thao tác quá nhanh chờ {t} giây",end='\r')
                 sleep(1)
             continue
-    # print(job) # in job này ra xem thử nó trả về cái gì trước đã
+     print(job) # in job này ra xem thử nó trả về cái gì trước đã
 
     # trả về [{'id': '100057679616936_856486362950676'}] như này thì ae sẽ tách ra chỉ cần lấy mỗi id thôi
 
@@ -65,7 +93,7 @@ while True: # vòng lặp nhé
 
     print(revice)
 
-# if "success" in revice: # này là kiểm tra xem success có xuất hiện trong revice không
+ if "success" in revice: # này là kiểm tra xem success có xuất hiện trong revice không
     
 
 # ae sửa như mình là được nhé hết lỗi:)))
