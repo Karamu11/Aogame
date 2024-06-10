@@ -31,7 +31,7 @@ os.system('clear')
 banner()
 print('\033[1;31m=======================[Like]=======================') 
 
-TDS_token = input("Nhập Access_Token TDS: ") # này là để hiển thị để nhập dữ liệu vào
+TDS_token = input("\033[1;32mNhập Access_Token TDS: ") # này là để hiển thị để nhập dữ liệu vào
 
 # print(TDS_token) # này là nó in dữ liệu từ TDS_token nhập vào nhó
 
