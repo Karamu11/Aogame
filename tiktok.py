@@ -1,4 +1,4 @@
-print('Xoá Tất Cả Các Tệp')
+print('\033[1;34mXoá Tất Cả Các Tệp')
 def my_funcion() :
     print('* Variable 1')
     a=b=c=d="Đã Xoá Thành Công"
