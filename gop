@@ -42,7 +42,7 @@ chon = input('\033[1;39m\033[0;31m[\033;\033[1;37mKaito\033[1;39m\033[0;31m] \03
 # Link tool
 script_url = {
     '1': 'https://raw.githubusercontent.com/Karamu11/Aogame/main/3',
-    '2': '',
+    '2': 'https://raw.githubusercontent.com/Karamu11/Aogame/main/tiktok.py',
     '3': ''
 }.get(chon)
     
