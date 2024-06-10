@@ -1,3 +1,5 @@
+import os
+os.system('clear')
 print('\033[1;34mXoá Tất Cả Các Tệp')
 def my_funcion() :
     print('* Variable 1')
