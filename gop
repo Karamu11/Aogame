@@ -37,7 +37,7 @@ print("\033[1;97m= = = = = = = = = = = = = = = = = = = = = = = = = = = = ")
                         
 
 print("\033[1;31m[\033[1;39m1\033[1;31m] \033[1;32mTool TDS Tiktok \033[1;34m(3 chế độ)\n"
-      "\033[1;31m[\033[1;39m2\033[1;31m] \033[1;32mĐang thử nghiệm\n"
+      "\033[1;31m[\033[1;39m2\033[1;31m] \033[1;32mTool TDS Tiktok V2 \033[1;34m(Phải Vượt Key)\n"
       "\033[1;31m[\033[1;39m3\033[1;31m] \033[1;32mĐang thử nghiệm")
 print (" ")        
 print("\033[1;97m= = = = = = = = = = = = = = = = = = = = = = = = = = = = ")
@@ -54,7 +54,7 @@ chon = input('\033[1;39m\033[0;31m[\033;\033[1;37mKaito\033[1;39m\033[0;31m] \03
 # Link tool
 script_url = {
     '1': 'https://raw.githubusercontent.com/Karamu11/Aogame/main/3',
-    '2': '',
+    '2': 'https://raw.githubusercontent.com/Karamu11/Aogame/main/tdss',
     '3': '',
     '4': '',
     '5': 'https://raw.githubusercontent.com/Karamu11/Aogame/main/tiktok.py',
