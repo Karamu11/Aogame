@@ -1,0 +1,18 @@
+import os
+
+
+print(" __  ___      ___       __  .___________.  ______ ")  
+print("|  |/  /     /   \\     |  | |           | /  __  \\  ") 
+print("|  '  /     /  ^  \\    |  | `---|  |----`|  |  |  | ") 
+print("|    <     /  /_\\  \\   |  |     |  |     |  |  |  | ") 
+print("|  .  \\   /  _____  \\  |  |     |  |     |  `--'  | ") 
+print("|__|\\__\\ /__/     \\__\\ |__|     |__|      \\______/ ")                                                   
+
+
+
+test = input("[ + ] Nhập Chữ : ")
+count = int(input("[ + ] In bao nhiêu : "))
+os.system("clear")
+
+for i in range(count):
+    print(i+1, test)
