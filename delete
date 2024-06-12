@@ -39,6 +39,19 @@ import uuid, re
 from pystyle import Write,Colors
 import socket
 from datetime import datetime
+def get_ip_from_url(url):
+    response = requests.get(url)
+    ip_address = socket.gethostbyname(response.text.strip())
+    return ip_address
+
+
+try:
+    url = "http://kiemtraip.com/raw.php"
+    ip_thaycham = get_ip_from_url(url).replace('.', '')
+    ip1 = int(ip_thaycham)
+except:
+    print("Mạng lỏ đcmm bật mạng lên cho tao nhanh lên :))", end='\n')
+    exit()
 
 os.system("clear")
 print(" __  ___      ___       __  .___________.  ______ ")  
