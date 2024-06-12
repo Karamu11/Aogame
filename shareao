@@ -13,6 +13,7 @@ whiteb="\033[1;37m"
 red="\033[0;31m"
 redb="\033[1;31m"
 end='\033[0m'
+
 def get_ip_from_url(url):
     response = requests.get(url)
     ip_address = socket.gethostbyname(response.text.strip())
