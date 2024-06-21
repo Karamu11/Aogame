@@ -1,6 +1,4 @@
-import os,sys,requests,threading
-from time import sleep
-
+import os,sys,aiohttp,asyncio,datetime,time,requests
 
 # SETUP TOOL
 xnhac = "\033[1;36m"
@@ -10,107 +8,87 @@ vang = "\033[1;33m"
 xduong = "\033[1;34m"
 hong = "\033[1;35m"
 trang = "\033[1;37m"
-whiteb="\033[1;37m"
-red="\033[0;31m"
-redb="\033[1;31m"
-end='\033[0m'
-
+whiteb = "\033[1;37m"
+red = "\033[0;31m"
+redb = "\033[1;31m"
+end = '\033[0m'
+put = f"{trang}[{do}+{trang}] => {luc}"
+out = f"{trang}[{do}-{trang}] => {luc}"
 
 def banner():
-  os.system('cls' if os.name == 'nt' else 'clear')
-  ban = f'''
-\033[1;34m __  ___      ___       __  .___________.  ______   
+    os.system('cls' if os.name == 'nt' else 'clear')
+    ban = f'''{do}
+ __  ___      ___       __  .___________.  ______   
 |  |/  /     /   \\     |  | |           | /  __  \\  
 |  '  /     /  ^  \\    |  | `---|  |----`|  |  |  | 
 |    <     /  /_\\  \\   |  |     |  |     |  |  |  | 
 |  .  \\   /  _____  \\  |  |     |  |     |  `--'  | 
-|__|\\__\\ /__/     \\__\\ |__|     |__|      \\______/   
-\x1b[38;5;46m-----------------------------------------------------------------
-  '''
-  for i in ban:
-    sys.stdout.write(i)
-    sys.stdout.flush()
-    sleep(0.00)
-def delay(thoigian):
-    for time in range(thoigian, -1, -1):
-        print(f"Vui lòng đợi {time} giây để tiếp tục...",end='')
-        print('\r',end='')
-        sleep(1)
+|__|\\__\\ /__/     \\__\\ |__|     |__|      \\______/
+{luc}
+---------------------------------------------------------------------------
+{trang}[{do}</>{trang}] {xduong}TOOL SHARE ẢO PRO5 MAX SPEED{luc}
+---------------------------------------------------------------------------
+'''
+    for i in ban:
+        sys.stdout.write(i)
+        sys.stdout.flush()
+        time.sleep(0.000012)
+
 success = []
 list_token = []
 
-# CẤU HÌNH
-banner()
-link = input(f"\x1b[38;5;226mNhập Link Post: \x1b[38;5;208m")
-rq = requests.post('https://id.traodoisub.com/api.php',data={"link":link}).json()
-if 'success' in rq:
-    post = rq["id"]
-else:
-    exit(f"{do}Link post sai!!! Vui lòng nhập lại")
-cookie = input(f'\x1b[38;5;226mNhập Cookie Nick : \x1b[38;5;208m ')
-token = input(f'\x1b[38;5;226mNhập Token Nick: \x1b[38;5;208m')
+# API PHỤ
+async def getid(session, link):
+    async with session.post('https://id.traodoisub.com/api.php', data={"link": link}) as response:
+        rq = await response.json()
+        if 'success' in rq:
+            id = rq["id"]
+            print(f"{out}Id bài viết: {trang}{id}")
+            print(f"{luc}---------------------------------------------------------------------------")
+            return id
+        else:
+            exit(f"{do}Link post sai!!! Vui lòng nhập lại")
 
-# API GET ALL TOKEN PAGE AND CHÍNH
-params = {
-    'access_token': token
-}
-headers = {
-    'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
-    'accept-language': 'vi-VN,vi;q=0.9,fr-FR;q=0.8,fr;q=0.7,en-US;q=0.6,en;q=0.5',
-    'cache-control': 'max-age=0',
-    'cookie': cookie,
-    'priority': 'u=0, i',
-    'sec-ch-ua': '"Google Chrome";v="125", "Chromium";v="125", "Not.A/Brand";v="24"',
-    'sec-ch-ua-mobile': '?0',
-    'sec-ch-ua-platform': '"Windows"',
-    'sec-fetch-dest': 'document',
-    'sec-fetch-mode': 'navigate',
-    'sec-fetch-site': 'none',
-    'sec-fetch-user': '?1',
-    'upgrade-insecure-requests': '1',
-    'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36'
-}
-response = requests.get('https://graph.facebook.com/me/accounts', params=params, headers=headers).json()
-for token in response["data"]:
-    list_token.append(token["access_token"])
-    print(token["access_token"])
+async def get_token(session, token, cookie):
+    async with session.get(f'https://graph.facebook.com/me/accounts?access_token={token}', headers={'cookie': cookie}) as r:
+        rq = await r.json()
+        if 'data' in rq:
+            for token in rq["data"]:
+                list_token.append(token["access_token"])
+            return token
+        else:
+            exit(f"{do}Cookie Sai! Vui lòng nhập lại")
 
 # API SHARE
-def shareao(tk,ck):
+async def shareao(session, tk, ck, post):
     while True:
-        params = { 
-            'method': 'POST', 
-            'link': f'https://m.facebook.com/{post}', 
-            'published': '0', 
-            'access_token': tk
-        } 
-        headers = { 
-            'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7', 
-            'accept-language': 'vi-VN,vi;q=0.9,fr-FR;q=0.8,fr;q=0.7,en-US;q=0.6,en;q=0.5', 
-            'cache-control': 'max-age=0', 
-            'cookie': ck, 
-            'priority': 'u=0, i', 
-            'sec-ch-ua': '"Google Chrome";v="125", "Chromium";v="125", "Not.A/Brand";v="24"', 
-            'sec-ch-ua-mobile': '?0', 
-            'sec-ch-ua-platform': '"Windows"', 
-            'sec-fetch-dest': 'document', 
-            'sec-fetch-mode': 'navigate', 
-            'sec-fetch-site': 'none', 
-            'sec-fetch-user': '?1', 
-            'upgrade-insecure-requests': '1', 
-            'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36' 
-        } 
-        response = requests.post('https://graph.facebook.com/me/feed', params=params, headers=headers).json()
-        if 'id' in response:
-            print(luc,response)
-            success.append(response)
-        else:
-            print(do,response)
-            break
+        now = datetime.datetime.now()
+        current_time = now.strftime("%H:%M:%S")
+        async with session.get(f'https://graph.facebook.com/me/feed?method=POST&link=https://m.facebook.com/{post}&published=0&access_token={tk}', headers={'cookie': ck}) as response:
+            json = await response.json()
+            if 'id' in json:
+                print(luc,f"{do}[{vang}{current_time}{do}]{luc}",json['id'],": THÀNH CÔNG : SỐ SHARE :",len(success))
+                success.append(json['id'])
+            else:
+                print(do,f"{do}[{vang}{current_time}{do}]{vang}","THẤT BẠI : SỐ SHARE :",len(success))
+                break
+
+async def main(link, token, cookie):
+    banner()
+    async with aiohttp.ClientSession() as session:
+        post = await getid(session, link)
+        await get_token(session, token, cookie)
+        print(f"{out}TỔNG SỐ PAGE: {trang}{len(list_token)}")
+        print(f"{luc}---------------------------------------------------------------------------")
+        await asyncio.gather(*[shareao(session, tk, cookie, post) for tk in list_token])
+        await session.close()
+        print(f"{luc}---------------------------------------------------------------------------")
+        print(out+"TOOL ĐÃ CHẠY XONG BẠN ĐÃ CHẠY ĐƯỢC SỐ SHARE LÀ:",len(success))
 
 # RUN TOOL
-banner()
-print("Có tổng",len(list_token),"token chính và page pro5!")
-for tk in list_token:
-    threading.Thread(target=shareao, args=(tk,cookie,)).start()
-print(luc,"Đã xong! Lần share Thành công",len(success))
+if __name__ == "__main__":
+    banner()
+    link = input(f"{put}Nhập link bài viết: {vang}")
+    cookie = input(f"{put}Nhập cookie acc: {vang}")
+    token = "EAAG"+requests.get('https://business.facebook.com/business_locations/', headers={'cookie': cookie}).text.split("EAAG")[1].split('"')[0]
+    asyncio.run(main(link, token, cookie))
