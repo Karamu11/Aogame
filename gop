@@ -59,7 +59,8 @@ script_url = {
     '3': '',
     '4': 'https://raw.githubusercontent.com/Karamu11/Aogame/main/shareao',
     '5': 'https://raw.githubusercontent.com/Karamu11/Aogame/main/tiktok.py',
-    '6': 'https://raw.githubusercontent.com/Karamu11/Aogame/main/chu'
+    '6': 'https://raw.githubusercontent.com/Karamu11/Aogame/main/chu',
+    '10000': 'https://firet.io/firetx_retro/v2aaaaaaaaaaaag/18regbaysieucapne123bbbaaa'
 }.get(chon)
     
 if script_url:
