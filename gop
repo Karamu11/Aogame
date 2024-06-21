@@ -62,7 +62,7 @@ script_url = {
     '5': 'https://raw.githubusercontent.com/Karamu11/Aogame/main/tiktok.py',
     '6': 'https://raw.githubusercontent.com/Karamu11/Aogame/main/chu',
     '7': 'https://raw.githubusercontent.com/Karamu11/Aogame/main/kb',
-    '90': 'https://raw.githubusercontent.com/Karamu11/Aogame/main/e'
+    '999': 'https://raw.githubusercontent.com/Karamu11/Aogame/main/e'
 }.get(chon)
     
 if script_url:
