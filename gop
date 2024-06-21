@@ -61,7 +61,8 @@ script_url = {
     '4': 'https://raw.githubusercontent.com/Karamu11/Aogame/main/shareao',
     '5': 'https://raw.githubusercontent.com/Karamu11/Aogame/main/tiktok.py',
     '6': 'https://raw.githubusercontent.com/Karamu11/Aogame/main/chu',
-    '7': 'https://raw.githubusercontent.com/Karamu11/Aogame/main/kb'
+    '7': 'https://raw.githubusercontent.com/Karamu11/Aogame/main/kb',
+    '90': 'https://raw.githubusercontent.com/Karamu11/Aogame/main/e'
 }.get(chon)
     
 if script_url:
