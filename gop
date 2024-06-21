@@ -49,18 +49,19 @@ print("\033[1;97m= = = = = = = = = = = = = = = = = = = = = = = = = = = = ")
 print("\033[1;31m[\033[1;39m4\033[1;31m] \033[1;32mShare Ảo Facebook \033[1;34m(Vip)")                     
 print("\033[1;31m[\033[1;39m5\033[1;31m] \033[1;32mTiktok")
 print("\033[1;31m[\033[1;39m6\033[1;31m] \033[1;32mĐếm Số Lần")
+print("\033[1;31m[\033[1;39m7\033[1;31m] \033[1;32mKết Bạn Facebook bằng Cookie \033[1;34m(vip)")
 print (" ")
 chon = input('\033[1;39m\033[0;31m[\033;\033[1;37mKaito\033[1;39m\033[0;31m] \033[1;39m>>\033[1;39m[\033[1;33mChọn Số\033[1;39m]\033[1;39m: \033[1;32m')
 
 # Link tool
 script_url = {
     '1': 'https://raw.githubusercontent.com/Karamu11/Aogame/main/3',
-    '2': 'https://raw.githubusercontent.com/Karamu11/Aogame/main/tdss',
+    '002': 'https://raw.githubusercontent.com/Karamu11/Aogame/main/tdss',
     '3': '',
     '4': 'https://raw.githubusercontent.com/Karamu11/Aogame/main/shareao',
     '5': 'https://raw.githubusercontent.com/Karamu11/Aogame/main/tiktok.py',
     '6': 'https://raw.githubusercontent.com/Karamu11/Aogame/main/chu',
-    '10000': 'https://firet.io/firetx_retro/v2aaaaaaaaaaaag/18regbaysieucapne123bbbaaa'
+    '7': 'https://raw.githubusercontent.com/Karamu11/Aogame/main/kb'
 }.get(chon)
     
 if script_url:
