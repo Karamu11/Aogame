@@ -1,0 +1,152 @@
+import time, requests, os, sys
+
+# SETUP TOOL
+xnhac = "\033[1;36m"
+do = "\033[1;31m"
+luc = "\033[1;32m"
+vang = "\033[1;33m"
+xduong = "\033[1;34m"
+hong = "\033[1;35m"
+trang = "\033[1;37m"
+whiteb = "\033[1;37m"
+red = "\033[0;31m"
+redb = "\033[1;31m"
+end = '\033[0m'
+put = f"{trang}[{do}+{trang}] => {luc}"
+out = f"{trang}[{do}-{trang}] => {luc}"
+
+def Clear():
+    os.system("cls" if os.name=="nt" else "clear")
+
+def Logo():
+    Clear()
+    Banner()
+
+def Banner():
+    logo = """\033[1;34m
+ __  ___      ___       __  .___________.  ______   
+|  |/  /     /   \\     |  | |           | /  __  \\  
+|  '  /     /  ^  \\    |  | `---|  |----`|  |  |  | 
+|    <     /  /_\\  \\   |  |     |  |     |  |  |  | 
+|  .  \\   /  _____  \\  |  |     |  |     |  `--'  | 
+|__|\\__\\ /__/     \\__\\ |__|     |__|      \\______/
+
+\033[1;37m════════════════════════════════════════════════════════════════
+\033[0;31m                 Tool Auto Kết Bạn Facebook
+\033[1;37m════════════════════════════════════════════════════════════════
+"""
+    for X in logo:
+        sys.stdout.write(X)
+        sys.stdout.flush()
+        time.sleep(0.000125)
+
+def line():
+    line="════════════════════════════════════════════════════════════════\n"
+
+    for X in line:
+        sys.stdout.write(X)
+        sys.stdout.flush()
+        time.sleep(0.0125)
+
+def GetListUID(cookie):
+    getData = requests.get("https://mbasic.facebook.com/",headers = {"Cookie":cookie}).text
+    urlAdd = "https://mbasic.facebook.com/friends/center/mbasic/"+getData.split('/friends/center/mbasic/')[1].split('"')[0].replace(';','&')
+    getListAdd = requests.get(urlAdd,headers = {"Cookie":cookie}).text
+    dict_Id = []
+    try:
+        for total in range(1, len(getListAdd.split("uid="))+1):
+            dict_Id.append(getListAdd.split("uid=")[total].split('&amp;')[0])
+    except:pass
+    return list(set(dict_Id))
+
+def CheckLoginFacebook(cookie):
+    loginUrl = requests.get("https://mbasic.facebook.com/profile.php",cookies={"cookie":cookie}).text
+    try:
+        fb_dtsg = loginUrl.split('input type="hidden" name="fb_dtsg" value="')[1].split('"')[0]
+        jazoest = loginUrl.split('input type="hidden" name="jazoest" value="')[1].split('"')[0]
+        idacc   = loginUrl.split('input type="hidden" name="target" value="')[1].split('"')[0]
+        name    = loginUrl.split('<title>')[1].split('</title>')[0]
+        return idacc,name
+    except:
+        return False
+
+def AddFriend(cookie, idFriend):
+    loginUrl = requests.get("https://mbasic.facebook.com/",cookies={"cookie":cookie}).text
+    fb_dtsg = loginUrl.split('input type="hidden" name="fb_dtsg" value="')[1].split('"')[0]
+    jazoest = loginUrl.split('input type="hidden" name="jazoest" value="')[1].split('"')[0]
+    idacc = cookie.split('c_user=')[1].split(';')[0]
+    headers = {
+        'authority': 'www.facebook.com',
+        'accept': '*/*',
+        'accept-language': 'vi-VN,vi;q=0.9,fr-FR;q=0.8,fr;q=0.7,en-US;q=0.6,en;q=0.5',
+        'content-type': 'application/x-www-form-urlencoded',
+        'cookie': cookie,
+        'dpr': '1',
+        'origin': 'https://www.facebook.com',
+        'referer': 'https://www.facebook.com',
+        'sec-ch-prefers-color-scheme': 'light',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        'sec-ch-ua-full-version-list': '"Not/A)Brand";v="99.0.0.0", "Google Chrome";v="115.0.5790.173", "Chromium";v="115.0.5790.173"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-model': '""',
+        'sec-ch-ua-platform': '"Windows"',
+        'sec-ch-ua-platform-version': '"10.0.0"',
+        'sec-fetch-dest': 'empty',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-site': 'same-origin',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'viewport-width': '723',
+        'x-asbd-id': '129477',
+        'x-fb-friendly-name': 'FriendingCometFriendRequestSendMutation',
+    }
+
+    data = {
+        'av': idacc,
+        'dpr': '1',
+        'fb_dtsg': fb_dtsg,
+        'jazoest': jazoest,
+        'fb_api_caller_class': 'RelayModern',
+        'fb_api_req_friendly_name': 'FriendingCometFriendRequestSendMutation',
+        'variables': '{"input":{"attribution_id_v2":"ProfileCometTimelineListViewRoot.react,comet.profile.timeline.list,via_cold_start,1692371049735,840895,190055527696468,","friend_requestee_ids":["'+idFriend+'"],"refs":[null],"source":"profile_button","warn_ack_for_ids":[],"actor_id":"'+idacc+'","client_mutation_id":"5"},"scale":1}',
+        'server_timestamps': 'true',
+        'doc_id': '24072356649022511',
+    }
+
+    add = requests.post('https://www.facebook.com/api/graphql/', headers=headers, data=data).text
+    if "OUTGOING_REQUEST" in add:
+        return {"status":1,"message":f"[ JIRAY ] Send Add Friends To UID : {idFriend} ==> SUCCESS"}
+    else:
+        return {"status":0,"message":f"[ JIRAY ] Send Add Friends To UID : {idFriend} ==> ERROR"}
+def DelayTime(timeDelay:int):
+    for _ in range(timeDelay,-1,-1):
+        print(f"[ JIRAY ] Đang Chờ {_} Giây...",end='\r')
+        time.sleep(1)
+Logo()
+cookie = input("\033[1;37m[\033[0;31m+\033[1;37m] => \033[1;32mCOOKIE FB : ")
+if CheckLoginFacebook(cookie=cookie)==False:
+    print("Cookie Die Hoặc Không Tồn Tại, Vui Lòng Xem Lại!")
+    exit()
+else:
+    name = CheckLoginFacebook(cookie)[1]
+    idacc = CheckLoginFacebook(cookie)[0]
+    line()
+    print(f"LOGIN SUCCESS : {name} <> UID : {idacc}")
+    time.sleep(2)
+
+Logo()
+timeDelay = int(input("\033[1;37m[\033[0;31m+\033[1;37m] => \033[1;34mNhập Delay Sau Mỗi Lần Gửi Kết Bạn : "))
+time.sleep(1.5)
+Logo()
+print(f"\033[0;31mFACEBOOK NAME : {name} <> UID : {idacc}")
+line()
+while True:
+    for idFriend in GetListUID(cookie):
+        addFR = AddFriend(cookie,idFriend)
+        if addFR["status"]==1:
+            msg = addFR["message"]
+            print(msg)
+            DelayTime(timeDelay)
+        else:
+            msg = addFR["message"]
+            print(msg,end='\r')
+# print(AddFriend("sb=F_XBZOJpb907pbzc-Twa_gXF;datr=F_XBZF20nrRaL6JJa2bJjiMc;c_user=100082234812595;m_page_voice=100082234812595;locale=pl_PL;fbl_st=100436474%3BT%3A28205596;wl_cbv=v2%3Bclient_version%3A2307%3Btimestamp%3A1692335770;fbl_cs=AhBjJvhX2qwnZ25Cur6hrnLMGDhTVG5vQUpuV1duRzZDYjYxVXAvQllYMg;fbl_ci=471185124340770;vpd=v1%3B915x412x3.5;wd=1366x657;xs=12%3Ad3H8OmgWmPFeQg%3A2%3A1691623322%3A-1%3A6298%3A%3AAcVt6f_KtbnYdCkOhkmjAWSBgixguYJKDloyJq_gQxI;presence=C%7B%22lm3%22%3A%22u.9209278%22%2C%22t3%22%3A%5B%7B%22o%22%3A0%2C%22i%22%3A%22u.100068557094592%22%7D%5D%2C%22utc3%22%3A1692369876606%2C%22v%22%3A1%7D;"))
