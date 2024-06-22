@@ -158,7 +158,7 @@ class OOP:
             except json.JSONDecodeError:
                 print("Error decoding JSON response.")
     def nhanXu(self, id_value, type_value):
-        now = datetime.datetime.now()
+        now = datetime.now()
         base_url = f"https://traodoisub.com/api/coin/?type={type_value}&id={id_value}&access_token={self.TDS_token}"
         response = self.s.get(base_url)
         if response.status_code == 200:
