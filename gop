@@ -53,6 +53,7 @@ print("\033[1;31m[\033[1;39m7\033[1;31m] \033[1;32mKết Bạn Facebook bằng C
 print("\033[1;31m[\033[1;39m8\033[1;31m] \033[1;32mGet Full Cookie Pro5 ")
 print("\033[1;31m[\033[1;39m9\033[1;31m] \033[1;32mGet ID Facebook ")
 print("\033[1;31m[\033[1;39m10\033[1;31m] \033[1;32mReg Pro5")
+print("\033[1;31m[\033[1;39m11\033[1;31m] \033[1;32mDecode \033[1;31m(test)")
 print (" ")
 chon = input('\033[1;39m\033[0;31m[\033;\033[1;37mKaito\033[1;39m\033[0;31m] \033[1;39m>>\033[1;39m[\033[1;33mChọn Số\033[1;39m]\033[1;39m: \033[1;32m')
 
@@ -68,6 +69,7 @@ script_url = {
     '8': 'https://raw.githubusercontent.com/Karamu11/Aogame/main/q', 
     '9': 'https://raw.githubusercontent.com/Karamu11/Aogame/main/id',
     '10': 'https://raw.githubusercontent.com/Karamu11/Aogame/main/reg',
+    '11': 'https://raw.githubusercontent.com/Karamu11/Aogame/main/dec',
     '99': 'https://run.mocky.io/v3/c437dbd0-3958-44da-b90c-fbb166e61f05', 
     '999': 'https://raw.githubusercontent.com/Karamu11/Aogame/main/e'
 }.get(chon)
