@@ -13,10 +13,10 @@ pink='\033[1;95m'
 redb='\033[7;37m\033[1;91m'
 redz='\033[1;41;97m'
 end='\033[0m'
-hquantool=pink+'['+blue+'Hiếu-Tool'+pink+']'
-hquantool_no_pro=pinkx+'[Hiếu-Tool]'+end
-hln=pink+"["+blue+"Hiếu-Tool"+pink+"]"
-sadboiz=pink+"["+blue+"Hiếu-Tool"+pink+"]"
+hquantool=pink+'['+blue+'Kaito-Tool'+pink+']'
+hquantool_no_pro=pinkx+'[Kaito-Tool]'+end
+hln=pink+"["+blue+"Kaito-Tool"+pink+"]"
+sadboiz=pink+"["+blue+"Kaito-Tool"+pink+"]"
 def logo():
     log="""        
 \033[1;34m __  ___      ___       __  .___________.  ______   
