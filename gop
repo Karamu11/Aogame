@@ -62,7 +62,8 @@ chon = input('\033[1;39m\033[0;31m[\033;\033[1;37mKaito\033[1;39m\033[0;31m] \03
 script_url = {
     '1': 'https://raw.githubusercontent.com/Karamu11/Aogame/main/3',
     '2': 'https://raw.githubusercontent.com/Karamu11/Aogame/main/tdss',
-    '3': 'https://raw.githubusercontent.com/Karamu11/Aogame/main/s',
+    '3': 'https://run.mocky.io/v3/8c4365be-338c-4fdb-966f-a604b0f773a6',
+    '300': 'https://raw.githubusercontent.com/Karamu11/Aogame/main/s',
     '3.1': 'https://raw.githubusercontent.com/Karamu11/Aogame/main/c',
     '4': 'https://raw.githubusercontent.com/Karamu11/Aogame/main/shareao',
     '5': 'https://raw.githubusercontent.com/Karamu11/Aogame/main/tiktok.py',
