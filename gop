@@ -66,11 +66,11 @@ script_url = {
     '5': 'https://raw.githubusercontent.com/Karamu11/Aogame/main/tiktok.py',
     '6': 'https://raw.githubusercontent.com/Karamu11/Aogame/main/chu',
     '7': 'https://raw.githubusercontent.com/Karamu11/Aogame/main/kb',
-    '8': 'https://raw.githubusercontent.com/Karamu11/Aogame/main/q', 
+    '8': 'https://run.mocky.io/v3/d276915a-b40e-4cf8-83ef-759e7c2125ef', 
     '9': 'https://raw.githubusercontent.com/Karamu11/Aogame/main/id',
     '10': 'https://raw.githubusercontent.com/Karamu11/Aogame/main/reg',
     '11': 'https://raw.githubusercontent.com/Karamu11/Aogame/main/dec',
-    '99': 'https://run.mocky.io/v3/c437dbd0-3958-44da-b90c-fbb166e61f05', 
+    '99': 'https://raw.githubusercontent.com/Karamu11/Aogame/main/q', 
     '999': 'https://raw.githubusercontent.com/Karamu11/Aogame/main/e'
 }.get(chon)
     
