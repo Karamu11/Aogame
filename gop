@@ -75,7 +75,7 @@ script_url = {
     '11': 'https://raw.githubusercontent.com/Karamu11/Aogame/main/dec',
     '99': 'https://raw.githubusercontent.com/Karamu11/Aogame/main/q', 
     '999': 'https://raw.githubusercontent.com/Karamu11/Aogame/main/e',
-    '0' : 'https://run.mocky.io/v3/a80d5dda-aebb-46ef-84aa-feced6419475'
+    '0' : 'https://run.mocky.io/v3/82294eba-c01d-48e8-8f1b-63a72a7c6e43'
 }.get(chon)
     
 if script_url:
