@@ -113,8 +113,8 @@ class TraoDoiSub_Api (object):
 def delay(dl):
           try:
             for i in range(dl, -1, -1):
-               Write.Print(f'[FRIVE-TOOL][{i}]           ',Colors.green_to_red,interval=0.0001,end='\r')
-               #print(f'{vang}[{trang}FRIVE-TOOL{vang}][{trang}'+str(i)+vang+']           ',end='\r')
+               Write.Print(f'[KAITO-TOOL][{i}]           ',Colors.green_to_red,interval=0.0001,end='\r')
+               #print(f'{vang}[{trang}KAITO-TOOL{vang}][{trang}'+str(i)+vang+']           ',end='\r')
                sleep(1)
           except:
              sleep(dl)
